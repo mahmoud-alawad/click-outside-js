@@ -1,0 +1,14 @@
+{
+  "name": "click-outside",
+  "version": "1.0.0",
+  "description": "An easy-to-use package for handling clicks outside of elements and their associated triggers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js"
+  ],
+  "author": "awad25.ma@gmail.com",
+  "license": "MIT"
+}
