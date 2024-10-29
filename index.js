@@ -12,6 +12,7 @@ class ClickOutside {
         : [...document.querySelectorAll('[data-click-outside-trigger]')]
 
     this.evt = e => {
+      e.stopPropagation()
       if (!this.elements?.length || !this.triggers?.length) {
         return
       }
@@ -24,7 +25,12 @@ class ClickOutside {
         el?.classList?.contains('active')
       )
 
-      if (e.target !== element && e.target !== elementTrigger) {
+      if (
+        element &&
+        elementTrigger &&
+        !element.contains(e.target) &&
+        !elementTrigger.contains(e.target)
+      ) {
         const event = new Event('onClickOutSide', {
           bubbles: true,
           detail: { element: () => element }
